@@ -18,14 +18,30 @@
 <p>
   <strong>Comments:</strong>
   <% @comments.each do |comment| %>
-    <p><%= comment.author %></p>
-    <p><%= comment.team %></p>
-    <p><%= comment.rank %></p>
-    <p><%= comment.comment_time %></p>
+    <p><%= comment.author %> | Team: <%= comment.team %> | <%= comment.rank %></p>
+    <p><%= comment.created_at %></p>
     <p><%= comment.body %></p>
   <% end %>
 </p>
 
+<strong>Add a comment:</strong>
+<%= form_for([@game, @game.comments.build]) do |f| %>
+ <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :team %><br>
+    <%= f.select :team, options_for_select([@game.team_1, @game.team_2]) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %> | 
-<%= link_to 'Add Comment', new_comment_path %> 

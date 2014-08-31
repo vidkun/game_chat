@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
-
-  resources :games
+  
+  resources :games do
+    resources :comments
+  end
 
   root 'games#index'
   # The priority is based upon order of creation: first created -> highest priority.
