@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @game.schedule %>
+</p>
+
+<p>
+  <strong>Team 1:</strong>
+  <%= @game.team_1 %>
+</p>
+
+<p>
+  <strong>Team 2:</strong>
+  <%= @game.team_2 %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <% @comments.each do |comment| %>
+    <p><%= comment.author %></p>
+    <p><%= comment.team %></p>
+    <p><%= comment.rank %></p>
+    <p><%= comment.comment_time %></p>
+    <p><%= comment.body %></p>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

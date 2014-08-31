@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  schedule: 2014-08-30 18:21:37
+  team_1: MyString
+  team_2: MyString
+
+two:
+  schedule: 2014-08-30 18:21:37
+  team_1: MyString
+  team_2: MyString

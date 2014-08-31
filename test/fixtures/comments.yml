@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  body: MyText
+  game_id: 
+  comment_time: 2014-08-30 18:29:22
+  rank: 1
+  team: MyString
+
+two:
+  author: MyString
+  body: MyText
+  game_id: 
+  comment_time: 2014-08-30 18:29:22
+  rank: 1
+  team: MyString
