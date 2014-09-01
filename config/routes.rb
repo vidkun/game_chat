@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   
   resources :games do
     resources :comments
-    #   patch :rank_up
-    #   patch :rank_down
-    # end
   end
 
   patch 'game/:id/comments/:comment_id/rank_down' => 'comments#rank_down', :as => 'rank_down'
