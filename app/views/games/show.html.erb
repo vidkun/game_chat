@@ -19,10 +19,10 @@
   <strong>Comments:</strong>
   <% @comments.each do |comment| %>
     <%= comment.author %> | Team: <%= comment.team %> |
-    <%= image_tag('arrow_down.png', {id: "rank_down", class: "arrow"}) %> <%= comment.rank %> <%= image_tag('arrow_up.png', {id: "rank_up", class: "arrow"}) %>
+    <%= link_to image_tag('arrow_down.png', {id: "rank_down", class: "arrow"}), rank_down_path(@game, comment), method: :patch %> <%= comment.rank %> <%= link_to image_tag('arrow_up.png', {id: "rank_up", class: "arrow"}), rank_up_path(@game, comment), method: :patch %>
     <p><%= comment.created_at %></p>
     <p><%= comment.body %></p>
-
+    
   <% end %>
 </p>
 

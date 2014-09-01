@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   
   resources :games do
     resources :comments
+    #   patch :rank_up
+    #   patch :rank_down
+    # end
   end
+
+  patch 'game/:id/comments/:comment_id/rank_down' => 'comments#rank_down', :as => 'rank_down'
+  patch 'game/:id/comments/:comment_id/rank_up' => 'comments#rank_up', :as => 'rank_up'
 
   root 'games#index'
   # The priority is based upon order of creation: first created -> highest priority.
