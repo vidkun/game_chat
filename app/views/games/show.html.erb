@@ -22,6 +22,7 @@
     <%= image_tag('arrow_down.png', {id: "rank_down", class: "arrow"}) %> <%= comment.rank %> <%= image_tag('arrow_up.png', {id: "rank_up", class: "arrow"}) %>
     <p><%= comment.created_at %></p>
     <p><%= comment.body %></p>
+
   <% end %>
 </p>
 
@@ -46,3 +47,4 @@
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %> |
+
