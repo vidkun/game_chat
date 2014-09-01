@@ -13,7 +13,7 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.schedule %></td>
+        <td><%= game.schedule.localtime %></td>
         <td><%= game.team_1 %></td>
         <td><%= game.team_2 %></td>
         <td><%= link_to 'Show', game %></td>
