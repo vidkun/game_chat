@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  patch 'game/:id/comments/:comment_id/rank_down' => 'comments#rank_down', :as => 'rank_down'
+  patch 'game/:id/comments/:comment_id/rank_up' => 'comments#rank_up', :as => 'rank_up'
+
   root 'games#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

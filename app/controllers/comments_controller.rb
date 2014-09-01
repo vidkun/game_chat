@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.order(rank: :desc)
   end
 
   # GET /comments/1
@@ -66,11 +66,25 @@ class CommentsController < ApplicationController
   end
 
   def rank_up
-    @comment.rank += 1
+    @game = Game.find(params[:id])
+    @comment = Comment.find(params[:comment_id])
+    @comment[:rank] += 1
+    respond_to do |format|
+      if @comment.update_attributes(rank: @comment[:rank])
+        format.html { redirect_to game_path(@game), notice: 'Comment rank was successfully updated.' }
+      end
+    end
   end
 
   def rank_down
-    @comment.rank -= 1
+    @game = Game.find(params[:id])
+    @comment = Comment.find(params[:comment_id])
+    @comment[:rank] -= 1
+    respond_to do |format|
+      if @comment.update_attributes(rank: @comment[:rank])
+        format.html { redirect_to game_path(@game), notice: 'Comment rank was successfully updated.' }
+      end
+    end
   end
 
   private
