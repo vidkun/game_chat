@@ -18,7 +18,8 @@
 <p>
   <strong>Comments:</strong>
   <% @comments.each do |comment| %>
-    <p><%= comment.author %> | Team: <%= comment.team %> | <%= comment.rank %></p>
+    <p id="wtf"><%= comment.author %> | Team: <%= comment.team %> | 
+    <%= image_tag('arrow_down.png', {id: "rank_down", class: "arrow"}) %><div class="rank"><%= comment.rank %></div><%= image_tag('arrow_up.png', {id: "rank_up", class: "arrow"}) %></p>
     <p><%= comment.created_at %></p>
     <p><%= comment.body %></p>
   <% end %>
