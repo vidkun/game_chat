@@ -4,7 +4,7 @@
 
 <p>
   <strong>Schedule:</strong>
-  <%= @game.schedule %>
+  <%= @game.schedule.localtime %>
 </p>
 
 <p>
@@ -41,7 +41,7 @@
   <% @comments.each do |comment| %>
     <%= comment.author %> | Team: <%= comment.team %> |
     <%= link_to image_tag('arrow_down.png', {id: "rank_down", class: "arrow"}), rank_down_path(@game, comment), method: :patch %> <%= comment.rank %> <%= link_to image_tag('arrow_up.png', {id: "rank_up", class: "arrow"}), rank_up_path(@game, comment), method: :patch %>
-    <p><%= comment.created_at.to_s(:db) %></p>
+    <p><%= comment.created_at.localtime %></p>
     <p><%= comment.body %></p>
     <p>=============================================</p>
   <% end %>
@@ -50,5 +50,5 @@
 
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %> |
+<%= link_to 'Back', root_path %> |
 
